@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue</title>
+  </head>
+  <body>
+    <h2>Abrir la consola del navegador y dar click en los botones</h2>
+    <div>
+      <wc-app1 id="app1" text-self="I am attr"></wc-app1>
+      <hr>
+      <wc-app2 id="app2" text-self="I am attr"></wc-app2>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      const app1 = document.getElementById("app1");
+      app1?.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("Event click in App1", e.detail);
+      });
+      app1?.addEventListener("demo", (e) => {
+        e.preventDefault();
+        console.log("customevent in App1", e.detail);
+      });
+      const app2 = document.getElementById("app2");
+      app2?.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("Event click in App2", e.detail);
+      });
+      app2?.addEventListener("demo", (e) => {
+        e.preventDefault();
+        console.log("customevent in App2", e.detail);
+      });
+    </script>
+  </body>
+</html>
