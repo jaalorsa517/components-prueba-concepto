@@ -10,6 +10,7 @@ export const defineCustomElement = (component, { plugins = [] } = {}) =>
       plugins.forEach(app.use);
 
       const inst = getCurrentInstance();
+      Object.assign(inst.provides, app._context.provides);
       Object.assign(inst.appContext, app._context);
 
       return () => h(component, props);
